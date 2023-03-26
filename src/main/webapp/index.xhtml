@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui" style="width:99%;height:98%;">
+<h:head>
+
+</h:head>
+<body style="width: 100%; height: 100%;">
+	<p:growl widgetVar="growl" id="growl" />
+	<p:ajaxStatus onstart="PF('mainBlock').show();"
+		oncomplete="PF('mainBlock').hide();" />
+		
+	<p:blockUI widgetVar="mainBlock" block="mainPanel" />
+
+	<p:panel id="mainPanel"
+		style="border-style:solid;border-color:grey;width:100%;height:100%;">
+
+		<p:panel>
+			<p:messages id="messages" />
+			<p:panelGrid columns="3" cellpadding="5">
+
+
+				<h:outputText id="greeting"
+					value="Hello from #{myBean.from} it's #{myBean.date}" />
+				<p:commandButton value="Update Date" update="mainPanel"/>
+
+			</p:panelGrid>
+
+		</p:panel>
+
+
+	</p:panel>
+
+
+
+
+
+</body>
+</html>
+
